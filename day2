@@ -1,0 +1,22 @@
+#Day 2: Data Types and Conditional Logic
+
+# 1. Definining variables with different data types
+material_name = "Conductive Thread"
+roll_length_meters = 15.5
+stock_count = 42
+is_available = True 
+
+#2. Printing types to verify 
+print("Material:", material_name,"Type:",type(material_name))
+print("Length:", roll_length_meters,"Type:",type(roll_length_meters))
+print("Stock:", stock_count,"Type:",type(stock_count))
+print("Available:", is_available,"Type",type(is_available))
+
+# 3. Conditonal decision making based on stock count 
+print("\n---Inventory Check ---")
+if stock_count > 50:
+    print("Status: Well stocked.")
+elif stock_count > 10: 
+    print("Status: Moderate stock. Consider reordering soon.")
+else: 
+    print("Status: Low stock! Immediate restock required.")

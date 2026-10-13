@@ -1,0 +1,23 @@
+# Day 3: Working with APIs and JSON Data
+
+import requests
+
+# We will use a public API that gives random interesting facts
+api_url = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en"
+
+print("Fetching a fact from the web...")
+
+# 1. Make a GET request to the API
+response = requests.get(api_url)
+# 2. Check if the request was successful (Status code 200 means success!)
+if response.status_code == 200:
+    # 3. Convert the JSON response into a Python dictionary
+    data = response.json()
+    
+    # 4. Extract and print specific information
+    fact_text = data.get("text")
+    
+    print("\n--- Success! Here is your fact: ---")
+    print(fact_text)
+else:
+    print("Failed to fetch data. Status code:", response.status_code)
